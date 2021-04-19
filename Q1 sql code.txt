@@ -1,0 +1,2 @@
+d.
+SELECT metabolism FROM annotation GROUP BY metabolism HAVING count(*) > 1;
