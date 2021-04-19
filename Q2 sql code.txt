@@ -1,0 +1,8 @@
+a.
+select LastName, FirstName, MemberID from Member where Coach=NULL;
+b.
+select LastName, FirstName, MemberID from Member where JoinDate>="2013-01-01 00:00:00" and JoinDate<"2014-01-01 00:00:00";
+c.
+select m.LastName, m.FirstName, m.MemberID from Member m JOIN Entry e ON m.MemberID=e.MemberID where e.year!="2013";
+d.
+select m.LastName, m.FirstName, m.MemberID from Member m where not exists (select e1.Year from Entry e1 WHERE NOT EXISTS (select * from Entry e2 where e2.MemberID=m.MemberID and e1.Year=e2.Year));
